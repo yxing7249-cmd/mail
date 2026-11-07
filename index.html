@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b13">
+  <title>TEMP MAIL — 临时邮箱</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">✉</span><span>TEMP<span class="accent">MAIL</span></span></a>
+    <div class="status"><i></i> 临时收件服务</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow"><span></span> PRIVATE · FAST · SIMPLE</div>
+      <h1>你的临时邮箱，<br><span>即刻生成。</span></h1>
+      <p>无需注册，创建一个临时收件地址，用于短期测试和非重要邮件。</p>
+    </section>
+
+    <section class="mail-card">
+      <div class="card-head">
+        <div><div class="small-label">YOUR TEMPORARY ADDRESS</div><h2>收件地址</h2></div>
+        <span class="live-pill"><i></i> READY</span>
+      </div>
+      <div class="address-row">
+        <div class="address-icon">＠</div>
+        <div class="address-text" id="emailAddress">点击下方按钮生成邮箱</div>
+        <button class="copy-btn" id="copyBtn" disabled aria-label="复制邮箱">复制</button>
+      </div>
+      <div class="custom-address">
+        <label for="customPrefix">自定义邮箱前缀</label>
+        <div class="custom-row">
+          <input id="customPrefix" type="text" maxlength="32" placeholder="例如：myidea" autocomplete="off" spellcheck="false">
+          <span class="at-sign">@</span>
+          <select id="domainSelect" aria-label="选择邮箱后缀">
+            <option value="1secmail.com">1secmail.com</option>
+            <option value="1secmail.net">1secmail.net</option>
+            <option value="1secmail.org">1secmail.org</option>
+            <option value="wwjmp.com">wwjmp.com</option>
+            <option value="esiix.com">esiix.com</option>
+            <option value="xojxe.com">xojxe.com</option>
+          </select>
+        </div>
+        <div class="field-hint">仅支持英文字母、数字、点、下划线和短横线；后缀由第三方服务提供。</div>
+      </div>
+      <div class="actions">
+        <button class="primary-btn" id="generateBtn"><span>＋</span> 随机生成邮箱</button>
+        <button class="secondary-btn custom-create-btn" id="customBtn">创建自定义邮箱</button>
+        <button class="secondary-btn" id="refreshBtn" disabled>↻ 刷新收件箱</button>
+        <button class="delete-btn" id="deleteBtn" disabled>⌫ 删除邮箱</button>
+      </div>
+      <div class="notice" id="statusMessage" role="status">提示：这是第三方临时邮箱服务，地址和邮件不具备私人或安全保障。</div>
+    </section>
+
+    <section class="inbox-section">
+      <div class="inbox-heading">
+        <div><div class="small-label">INCOMING MESSAGES</div><h2>收件箱 <span class="count" id="mailCount">0</span></h2></div>
+        <span class="updated" id="lastUpdated">尚未检查</span>
+      </div>
+      <div class="inbox-layout">
+        <div class="message-list" id="messageList">
+          <div class="empty-state"><div class="empty-icon">⌁</div><strong>收件箱还是空的</strong><p>生成邮箱后，发送一封测试邮件到这个地址。</p></div>
+        </div>
+        <article class="message-view" id="messageView">
+          <div class="empty-reading"><div>✉</div><strong>选择一封邮件</strong><p>邮件内容会显示在这里。</p></div>
+        </article>
+      </div>
+    </section>
+    <footer><span>TEMP MAIL</span><span>仅供测试与临时用途 · 不要接收敏感信息</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
